@@ -68,7 +68,7 @@ export function Prato() {
 
  const resultString = String(Ife2)
 
- const resultado = (resultString.replace(".", ","))
+ const resultado = resultString.replace(".", ",")
 
  resultado.toString().padStart(4, "0")
 
