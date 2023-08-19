@@ -9,7 +9,7 @@ import { Input } from "../../componentes/Input";
 import { Label } from "../../componentes/Label";
 import { NewItem } from "../../componentes/NewItem";
 import { Textarea } from "../../componentes/Textarea";
-import Upload from '../../assets/upload.svg';
+import Upload from '../../assets/Upload.svg';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../../services/api";
