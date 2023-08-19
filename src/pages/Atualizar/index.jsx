@@ -95,11 +95,6 @@ fetcProducts()
     const dataIngredients = data.ingredients.map(function (ingredient){
       return ingredient.name
     })
-
-    if(title == product.title && category == product.category && description == product.description && value == product.value && !ingredients && remove(id)  && avatarFile === null) {
-      alert("Voçe não atualizou nenhum campo!")
-      return
-    }
     
     try {
       if(ingredients) {
