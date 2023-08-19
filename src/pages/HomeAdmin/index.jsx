@@ -1,5 +1,5 @@
 import { Container, Main} from "./style";
-import { HeaderAdmin } from "../../componentes/Headeradmin";
+import { HeaderAdmin } from "../../componentes/HeaderAdmin";
 import { Baner } from "../../componentes/Baner";
 import { HeaderMobiAdmin } from "../../componentes/HeaderMobiAdmin";
 import { Section } from "../../componentes/Section";
