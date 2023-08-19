@@ -9,20 +9,25 @@ import { ButtonText } from "../../componentes/ButtonText";
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from "../../hooks/auth";
 
-export function Header({setSearch}) {
+export function Header({value, setSearch}) {
 
     const { signOut } = useAuth()
+    const navigate = useNavigate()
+
+    async function sair () {
+        await signOut()
+        navigate("/")
+    }
 
     return (
         <Container>
             <Logo img={logo}/>
-            <InputHeader  icon={FiSearch} type="text" placeholder="Busque por pratos ou ingredientes"/>
+            <InputHeader value={value}  onChange={e => setSearch(e.target.value)} icon={FiSearch} type="text" placeholder="Busque por pratos ou ingredientes"/>
             <Button 
-             onChange={e => setSearch(e.target.value)}
              icon={PiReceipt} 
              title="Pedidos (0)"
              />
-            <ButtonText icon={FiLogOut} onClick={signOut}/>
+            <ButtonText icon={FiLogOut} onClick={sair}/>
         </Container>
     )
 }

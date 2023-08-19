@@ -11,25 +11,21 @@ import { api } from "../../services/api";
 
 export function Home() {
 
-  const navigate = useNavigate()
-
   const [search, setSearch] = useState("")
   const [products, setProducts] = useState([]) 
 
-  useEffect(() => {
-    async function fetcProducts() {
-     const response = await api.get(`/products/?title=${search}`)
-     setProducts(response.data)
-    }
-
-    fetcProducts()
-  }, [search])
-
-
+    useEffect(() => {
+      async function fetcProducts() {
+       const response = await api.get(`/products/?title=${search}`)
+       setProducts(response.data)
+      }
+  
+      fetcProducts()
+    }, [search])
 
     return (
         <Container>
-          <Header setSearch={setSearch}/>
+          <Header value={products.title} setSearch={setSearch}/>
           <HeaderMobi/>
           <Main>
           <Baner/>

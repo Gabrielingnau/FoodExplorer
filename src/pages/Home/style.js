@@ -7,7 +7,7 @@ grid-template-areas:
 "header"
 "main"
 "footer";
-grid-template-rows: 10rem auto;
+grid-template-rows: 11.4rem auto;
 
 > header:nth-child(2) {
   display: none;
@@ -16,10 +16,18 @@ grid-template-rows: 10rem auto;
 @media(max-width: 60rem) {
   > header:nth-child(2) {
   display: flex;
+  grid-template-rows: 9rem auto;
 }
   > header:first-child {
   display: none;
 }
+}
+
+@media(max-width: 40rem) {
+  > header:nth-child(2) {
+  grid-template-rows: 7rem auto;
+}
+  
 }
 `;
 

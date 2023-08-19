@@ -66,17 +66,22 @@ width: 100%;
        }
     }
 }
-
- .carousel{
-    overflow-x: auto;
-    scroll-behavior: smooth;
+.wraperCarousel{
     display: flex;
-    align-items: center;
-    width: 94vw;
-
-    flex-direction: row;
     justify-content: center;
-} 
+    .carousel{
+       overflow-x: auto;
+       scroll-behavior: smooth;
+       display: flex;
+       align-items: center;
+       width: 90vw;
+       flex-direction: row;
+
+        >div:first-child{
+            margin-left: 4.5rem;
+        }
+   } 
+}
 
 .carousel::-webkit-scrollbar{
     display: none;
@@ -96,7 +101,7 @@ width: 100%;
 >.left{
     position: absolute;
     width: 8rem;
-    height: 31.2rem;
+    height: 38rem;
     margin-top: 5.5rem;
     
     >svg{
@@ -108,7 +113,7 @@ width: 100%;
     position: absolute;
     right: 0;
     width: 8rem;
-    height: 31.2rem;
+    height: 38rem;
     margin-top: 5.5rem;
 
     >svg{
@@ -116,6 +121,13 @@ width: 100%;
         }
 }
 }
+}
+.wraperCarousel{
+    .carousel{
+        >div:first-child{
+            margin-left: 3rem;
+        }
+   } 
 }
 } 
 
@@ -139,7 +151,7 @@ width: 100%;
         position: absolute;
         left: -5px;
         width: 5rem;
-        height: 25.5rem;
+        height: 28rem;
         margin-top: 5.5rem;
         
         >svg{
@@ -150,7 +162,7 @@ width: 100%;
         position: absolute;
         right: 0;
         width: 5rem;
-        height: 25.5rem;
+        height: 28rem;
         margin-top: 5.5rem;
  
         >svg{
@@ -158,6 +170,13 @@ width: 100%;
         }
     }
 }
+}
+.wraperCarousel{
+    .carousel{
+        >div:first-child{
+            margin-left: 2rem;
+        }
+   } 
 }
 } 
 

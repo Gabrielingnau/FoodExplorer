@@ -27,6 +27,7 @@ export function New() {
   const [value, setValue] = useState(0)
   const [avatarFile, setAvatarFile] = useState(null);
 
+
   function handleAddIngredients() {
     setIngredients(prevStat => [...prevStat, newIngredient])
     setNewIngredient("")
@@ -63,11 +64,11 @@ export function New() {
     
     await api.post("/products", formData)
     alert("Produto adicionado com sucesso!")
+    navigate(-1);
   }catch(error) {
     if(error.response) {
       alert(error.response.data.message)
     }else{
-      console.log(avatarFile)
       alert("Não foi possivel adicionar o produto")
     }
   }

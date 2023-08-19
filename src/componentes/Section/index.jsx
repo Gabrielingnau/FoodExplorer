@@ -9,7 +9,7 @@ export function Section({name, children}) {
     const handleLeftClick = (e) =>{
         e.preventDefault()
         
-        carousel.current.scrollLeft -= carousel.current.offsetWidth 
+        carousel.current.scrollLeft -= 2000 
     }
 
     const handleRightClick = (e) =>{
@@ -30,8 +30,10 @@ export function Section({name, children}) {
 
             </div>
             </div>
+            <div className="wraperCarousel">
             <div className="carousel" ref={carousel}>
             {children}
+            </div>
             </div>
         </Container>
     )

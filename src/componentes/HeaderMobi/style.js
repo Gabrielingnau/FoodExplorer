@@ -26,9 +26,8 @@ export const Container = Styled.header`
   }
 
   @media(max-width: 40rem) {
-    >div:last-child {
-    width: 32rem;
-  }
+    height: 7;
+   
   
   a {
     >div {

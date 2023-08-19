@@ -14,109 +14,139 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { api } from "../../services/api";
 import { useParams } from "react-router-dom";
+import { useAuth } from "../../hooks/auth";
 
 export function Atualizar() {
 
   const navigate = useNavigate()
 
+  const params = useParams()
+  const id = params.id
+  const { updatedProducts, getProduct, product } = useAuth()
+  
+  useEffect(() => {
+    async function fetcProducts () {
+      const response = await api.get(`/products/${params.id}`)
+      setTitle(response.data.title)
+  }
+  fetcProducts()
+}, [])
+
+useEffect(() => {
+  async function fetcProducts () {
+    const response = await api.get(`/products/${params.id}`)
+    setValue(response.data.value)
+}
+fetcProducts()
+}, [])
+
+useEffect(() => {
+  async function fetcProducts () {
+    const response = await api.get(`/products/${params.id}`)
+    setCategory(response.data.category)
+}
+fetcProducts()
+}, [])
+
+useEffect(() => {
+  async function fetcProducts () {
+    const response = await api.get(`/products/${params.id}`)
+    setDescription(response.data.description)
+}
+fetcProducts()
+}, [])
+  
   const [data, setData] = useState(null)
   const [ingredients, setIngredients] = useState([])
   const [newIngredient, setNewIngredient] = useState("")
-
-  const [category, setCategory] = useState("")
+  
   const [title, setTitle] = useState("")
+  const [category, setCategory] = useState("")
   const [description, setDescription] = useState("")
-  const [value, setValue] = useState(0)
-  const [avatarFile, setAvatarFile] = useState({ });
-
-  const avatarURL =  data && `${api.defaults.baseURL}/files/${data.avatar}`
-
-  const params = useParams()
-
-  function handleAddIngredients() {
-    setIngredients(prevStat => [...prevStat, newIngredient])
-    setNewIngredient("")
-  }
-
-  function handleRemoveIngredients(deleted) {
-    setIngredients(prevStat => prevStat.filter(ingredient => ingredient !== deleted))
-  }
-
-  function handleImage(e) {
-    const file = e.target.files[0];
-    setAvatarFile(file);
-  }
-
+  const [value, setValue] = useState("")
+  const [avatarFile, setAvatarFile] = useState(null);
+  
+  getProduct(id)
+  
   useEffect(() => {
     async function fetcProducts () {
       const response = await api.get(`/products/${params.id}`)
       setData(response.data)
     }
-
     fetcProducts()
   }, [])
   
+  async function remove (id) {
+    await api.delete(`/ingredients/${id}`)
+    const response = await api.get(`/products/${params.id}`)
+    setData(response.data)
+  }
+  
+  function handleAddIngredients() {
+    setIngredients(prevStat => [...prevStat, newIngredient])
+    setNewIngredient("")
+  }
+  
+  function handleRemoveIngredients(deleted) {
+    setIngredients(prevStat => prevStat.filter(ingredient => ingredient !== deleted))
+  }
+  
   async function handleUpdateProduct() {
     const dataIngredients = data.ingredients.map(function (ingredient){
-       return ingredient.name
+      return ingredient.name
     })
-    try {
-      if(category) {
-        await api.put(`/products/${params.id}`, {
-          title: data.title,
-          category,
-          value: data.value,
-          description:data .description,
-          ingredients: dataIngredients
-        });
-      }
-      if(value) {
-        await api.put(`/products/${params.id}`, {
-          title: data.title,
-          category: data.category,
-          value,
-          description:data .description,
-          ingredients: dataIngredients
-        });
-      }
-      if(description) {
-        await api.put(`/products/${params.id}`, {
-          title: data.title,
-          category: data.category,
-          value: data.value,
-          description,
-          ingredients: dataIngredients
-        });
-      }
-      if(title) {
-        await api.put(`/products/${params.id}`, {
-          title,
-          category: data.category,
-          value: data.value,
-          description:data .description,
-          ingredients: dataIngredients
-        });
-      }
-      if(!category && !value && !description && !title){
-        await api.put(`/products/${params.id}`, {
-          title: data.title,
-          category: data.category,
-          value: data.value,
-          description:data .description,
-          ingredients: dataIngredients
-        });
-      }
 
-      if(avatarFile) {
+    if(title == product.title && category == product.category && description == product.description && value == product.value  && avatarFile === null) {
+      alert("Voçe não atualizou nenhum campo!")
+      return
+    }
+    
+    try {
+      if(ingredients) {
+        const product = {
+          title,
+          category,
+          value,
+          description,
+          ingredients
+        }
+        updatedProducts({product, id})
+      }else{
+        const product = {
+          title,
+          category,
+          value,
+          description,
+        }
+        updatedProducts({product, id})
+      }
+      
+      
+      if(avatarFile === null) {
+        async function Avatar() {
+          const avatarURL =  await data && `${api.defaults.baseURL}/files/${data.avatar}`
+          const fileUploadForm = new FormData();
+          await fileUploadForm.append("avatar", avatarURL);
+          
+          await api.patch(`products/${params.id}`, fileUploadForm);
+        }
+      }else{
         const fileUploadForm = new FormData();
         fileUploadForm.append("avatar", avatarFile);
 
-        await api.patch(`/avatar/${params.id}`, fileUploadForm);
+        await api.patch(`products/${params.id}`, fileUploadForm);
       }
 
       alert("Prato atualizado com sucesso");
       navigate("/");
     } catch(error) {
+      await api.put(`/products/${params.id}`, {
+        title: data.title,
+        category: data.category,
+        value: data.value,
+        description:data .description,
+        ingredients: dataIngredients
+      });
       if(error.response) {
         alert(error.response.data.message);
       } else {
@@ -156,14 +186,14 @@ export function Atualizar() {
             <div className="image">
                             <span>Imagem do prato</span>
                             <div className="inputImage">
-                            <label htmlFor="imageUpload">Selecione imagem</label>
+                            <label htmlFor="imageUpload">Selecione imagem para alterá-la</label>
                             <div className="file">
                             <img src={Upload} alt="" />
                             <Input
                                     id="imageUpload"
                                     type="file"
                                     placeholder="Selecione imagem"
-                                    onChange={handleImage}
+                                    onChange={e => setAvatarFile(e.target.files[0])}
                                 />
 
                             </div>                           
@@ -173,15 +203,15 @@ export function Atualizar() {
                <Label title="name" id="name">
                 <Input id="name"
                        type="text"                       
-                       placeholder="Salada Ceasar"
+                       placeholder={product.title}
+                       value={title}
                        onChange={e => setTitle(e.target.value)}
-                       />
+                       />               
                </Label>
                </div>
                <div className="category">
-                <Label id="category" title="Categoria"></Label>
-                <select onChange={e => setCategory(e.target.value)} id="category">     
-                   <option value="Selecionar">Selecionar</option>
+                <Label  placeholder={product.category} value={category} id="category" title="Categoria"></Label>
+                <select value={category} onChange={e => setCategory(e.target.value)} id="category">     
                    <option value="Pratos">Pratos</option>
                    <option value="Sobremesas">Sobremesas</option>
                    <option value="Bebidas">Bebidas</option>
@@ -194,11 +224,12 @@ export function Atualizar() {
               <Label id="item" title="Ingredientes"></Label>
 
               <div id="item" className="Item">           
-                  {data.ingredients.map((ingredient, index) => (
+                  {
+                  data.ingredients.map((ingredient, index) => (
                     <NewItem 
                     key={String(index)}
                     value={ingredient.name}
-                    onClick={() => { handleRemoveIngredients(ingredient)}}
+                    onClick={() => { remove(ingredient.id)}}
                     />
                   ))
                   }
@@ -227,9 +258,9 @@ export function Atualizar() {
               <Label title="Preço" id="value">
                 <Input id="value"
                        type="text"
-                       value={data.value}
-                       placeholder="R$ 00,00"
-                       onChange={e => setValue(e.targetvalue)}
+                       placeholder={product.value}
+                       value={value}
+                       onChange={e => setValue(e.target.value)}
                        />
                </Label>
               </div>
@@ -239,9 +270,9 @@ export function Atualizar() {
                <div className="textarea">
                <Textarea 
                id="descrip"
-                placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
                 maxLength={90}
-                value={data.description}
+                placeholder={product.description}
+                value={description}
                 onChange={ e => setDescription(e.target.value)}
                />
                </div>

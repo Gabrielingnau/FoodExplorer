@@ -31,14 +31,12 @@ export function Card({ data, ...rest }){
         navigate(`/prato/${id}`);
     }
 
-    function handleAtualizarProducts(id) {
-        navigate(`/atualizar/${id}`);
-    }
+    
 
     return(
         <Container {...rest}>
 
-           <ButtonText onClick={() => handleAtualizarProducts(data.id)} icon={AiOutlineHeart}/>
+           <ButtonText  icon={AiOutlineHeart}/>
 
         <div className="item">
            <div className="image">

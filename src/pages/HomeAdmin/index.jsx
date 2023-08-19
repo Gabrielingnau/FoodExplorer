@@ -11,8 +11,6 @@ import { api } from "../../services/api";
 
 export function HomeAdmin() {
 
-  const navigate = useNavigate()
-
   const [search, setSearch] = useState("")
   const [products, setProducts] = useState([]) 
 
@@ -25,10 +23,6 @@ export function HomeAdmin() {
     fetcProducts()
   }, [search])
 
-
-  function HandleClickSair () {
-    navigate("/new")
-  }
 
     return (
         <Container>

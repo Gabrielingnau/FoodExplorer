@@ -1,16 +1,17 @@
 import { Container, Header, Main } from "./style";
-import { Input } from "../../componentes/Input";
+import { InputHeader } from "../../componentes/InputHeader";
 import { ButtonText } from "../../componentes/ButtonText";
 import { Footer } from "../../componentes/Footer";
 import { FiSearch } from 'react-icons/fi';
 import { GrFormClose } from 'react-icons/gr';
 import close from "../../assets/Close.svg";
 import { useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
 import { useAuth } from "../../hooks/auth";
+import {Home} from "../Home"
 
 
 export function Menu() {
-
   const { signOut } = useAuth()
 
   const navigate = useNavigate()
@@ -31,7 +32,7 @@ export function Menu() {
           </Header>
           <Main>
             <div className="main">
-               <Input icon={FiSearch} placeholder="Busque por pratos ou ingredientes"/>
+               <InputHeader onChange={e => seetSearch(e.target.value)} icon={FiSearch} placeholder="Busque por pratos ou ingredientes"/>
                <div className="button">
                 <Link to="/">
                <ButtonText title="Sair" onClick={signOut}/>

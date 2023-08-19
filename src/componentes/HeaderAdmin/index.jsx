@@ -12,6 +12,12 @@ import { useAuth } from "../../hooks/auth";
 export function HeaderAdmin({setSearch}) {
 
     const { signOut } = useAuth()
+    const navigate = useNavigate()
+
+    async function sair () {
+        await signOut()
+        navigate("/")
+    }
 
     return (
         <Container>
@@ -30,7 +36,7 @@ export function HeaderAdmin({setSearch}) {
             <Button title="Novo prato"/>
             </Link>
 
-            <ButtonText icon={FiLogOut} onClick={signOut}/>
+            <ButtonText icon={FiLogOut} onClick={sair}/>
 
         </Container>
     )

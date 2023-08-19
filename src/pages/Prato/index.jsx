@@ -11,10 +11,12 @@ import { HeaderMobi } from "../../componentes/HeaderMobi";
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { api } from "../../services/api";
+import { useAuth } from "../../hooks/auth";
 
 export function Prato() {
 
   const navigate = useNavigate()
+  const {  getProduct, product } = useAuth()
 
   const [data, setData] = useState(null)
   const [total, setTotal] = useState(1)
@@ -22,6 +24,8 @@ export function Prato() {
   const avatarURL =  data && `${api.defaults.baseURL}/files/${data.avatar}`
   
   const params = useParams()
+
+  getProduct(params.id)
   
   function addItem() {
     setTotal(prevState => prevState + 1)
@@ -33,9 +37,6 @@ export function Prato() {
     }
   }
 
-  
-  
-  
   useEffect(() => {
     async function fetcProducts () {
       const response = await api.get(`/products/${params.id}`)
@@ -50,6 +51,18 @@ export function Prato() {
   function handleBack() {
     navigate(-1);
   }
+
+ const Value = String(product.value)
+ const Total = String(total)
+
+ const Value1 = Value.replace(",", ".")
+ const Total2 = Total.replace(",", ".")
+
+ const result = Total2 * Value1
+
+ const resultString = String(result)
+
+ const resultado = (resultString.replace(".", ","))
 
   return (
         <Container>
@@ -86,7 +99,7 @@ export function Prato() {
                 <ButtonText onClick={addItem} icon={AiOutlinePlus}/>
               </div>
               <div className="button">
-                <Button icon={PiReceipt} title={`pedir ∙ R$${total * data.value}`}/>
+                <Button icon={PiReceipt} title={`incluir ∙ R$${resultado}`}/>
               </div>
             </div>
             </div>

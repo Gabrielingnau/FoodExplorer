@@ -15,7 +15,7 @@ import { api } from "../../services/api";
 export function PratoAdmin() {
 
   const navigate = useNavigate()
-
+  
   const [data, setData] = useState(null)
 
   const avatarURL =  data && `${api.defaults.baseURL}/files/${data.avatar}`
@@ -35,6 +35,10 @@ export function PratoAdmin() {
   function handleBack() {
     navigate(-1);
   }
+
+  function handleAtualizarProducts () {
+    navigate(`/atualizar/${params.id}`);
+}
 
     return (
         <Container>
@@ -66,9 +70,9 @@ export function PratoAdmin() {
             </div>
             <div className="butons-wraper">
               <div className="button">
-                <Link to="/atualizar">
-                <Button title="Editar prato"/>
-                </Link>
+                
+                <Button onClick={handleAtualizarProducts} title="Editar prato"/>
+               
               </div>
             </div>
             </div>
