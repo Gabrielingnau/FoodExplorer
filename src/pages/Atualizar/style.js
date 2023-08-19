@@ -98,7 +98,7 @@ width: 100%;
     color: ${({theme}) => theme.COLORS.GRAY_400};
   }
   .inputImage{       
-    width: 22.9rem;
+    width: 28rem;
     height: 5.1rem; 
     margin-top: 1.6rem;
     
