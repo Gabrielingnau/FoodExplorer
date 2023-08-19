@@ -3,7 +3,7 @@
 	 Status: Em desenvolvimento...
 </h4>
 <p align="center">
-  <h4 align="center"><a href="foodexpl0rer.netlify.app">FoodRocktseat</a></h4>
+  <h4 align="center"><a href="https://foodexpl0rer.netlify.app">foodexpl0rer.netlify.app</a></h4>
 </p>
 
 <p align="center">
