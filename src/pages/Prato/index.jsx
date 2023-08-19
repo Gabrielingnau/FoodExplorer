@@ -64,6 +64,9 @@ export function Prato() {
 
  const result = Total2 * Value1
 
+ console.log(ife)
+ comsole.log(result)
+
  const Ife2 = result.replace(ife, "00")
 
  const resultString = String(Ife2)
