@@ -52,15 +52,21 @@ export function Prato() {
     navigate(-1);
   }
 
+ const ife = total * 11
+
  const Value = String(product.value)
  const Total = String(total)
 
+ Value.replace("00", "11")
  const Value1 = Value.replace(",", ".")
  const Total2 = Total.replace(",", ".")
 
+
  const result = Total2 * Value1
 
- const resultString = String(result)
+ const Ife1 = result.replace(ife, "00")
+
+ const resultString = String(Ife1)
 
  const resultado = (resultString.replace(".", ","))
 
