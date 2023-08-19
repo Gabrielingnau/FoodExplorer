@@ -1,12 +1,9 @@
-<p align="center">
-  <h1 align="center"><a href="https://food3xplorer.netlify.app/">Food Explorer - Rocketseat Explorer :rocket: </a></h1>
-</p>
 
 <h4 align="center"> 
 	 Status: Em desenvolvimento...
 </h4>
 <p align="center">
-  <h4 align="center"><a href="https://foodexplorer-mw.netlify.app/">https://foodexplorer-mw.netlify.app/</a></h4>
+  <h4 align="center"><a href="foodexpl0rer.netlify.app">FoodRocktseat</a></h4>
 </p>
 
 <p align="center">
@@ -149,7 +146,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 ---
 
 ## Deploy do projeto.
-https://foodexplorer-mw.netlify.app/
+foodexpl0rer.netlify.app
 
 ___
 
