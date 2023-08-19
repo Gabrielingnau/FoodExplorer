@@ -96,8 +96,6 @@ width: 100%;
     }
 
 >.buttons {
-    height: 28rem;
-
 >.left{
     position: absolute;
     width: 8rem;
@@ -144,9 +142,6 @@ width: 100%;
             
         }
         >.buttons {
-          height: 28rem;
-          width: 97%;
-
     >.left{
         position: absolute;
         left: -5px;
