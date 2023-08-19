@@ -60,6 +60,8 @@ export function Prato() {
 
  const result = Total2 * Value1
 
+ result.toString().padStart(4, "0")
+
  const resultString = String(result)
 
  const resultado = (resultString.replace(".", ","))
