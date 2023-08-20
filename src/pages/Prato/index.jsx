@@ -56,7 +56,7 @@ export function Prato() {
  const Value = String(product.value)
  const Total = String(total)
 
- const Value1 = Ife1.replace(",", ".")
+ const Value1 = Value.replace(",", ".")
  const Total2 = Total.replace(",", ".")
 
 
