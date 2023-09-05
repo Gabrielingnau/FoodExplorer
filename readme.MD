@@ -116,7 +116,7 @@ $ npm run dev
 $ https://github.com/Gabrielingnau/FoodExplorer
 
 # Abra seu VS CODE e em seguida abra a pasta do Frontend para abrir o projeto
-$React-Restaurante
+$ cd React-Restaurante
 
 # Instale as dependências com:
 $ npm install
