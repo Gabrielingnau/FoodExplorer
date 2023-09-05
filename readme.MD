@@ -92,7 +92,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 $ https://github.com/Gabrielingnau/FoodBackEnd
 
 # Abra seu VS CODE e em seguida abra a pasta do Backend para abrir o projeto
-$ cd FoodExplorer_BackEnd
+$ cd bac-end Restaurante
 
 # No BackEnd insira uma porta e um secret no arquivo .env vazio
   AUTH_SECRET=
@@ -113,10 +113,10 @@ $ npm run dev
 ```bash
 
 # Faça download do repositório
-$ https://github.com/mewerton/FoodExplorer_FrontEnd
+$ https://github.com/Gabrielingnau/FoodExplorer
 
 # Abra seu VS CODE e em seguida abra a pasta do Frontend para abrir o projeto
-$ FoodExplorer_FrontEnd
+$React-Restaurante
 
 # Instale as dependências com:
 $ npm install
