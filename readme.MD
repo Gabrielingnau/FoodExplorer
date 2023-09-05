@@ -89,7 +89,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ```bash
 # Faça download do repositório
-$ https://github.com/mewerton/FoodExplorer_BackEnd
+$ https://github.com/Gabrielingnau/FoodBackEnd
 
 # Abra seu VS CODE e em seguida abra a pasta do Backend para abrir o projeto
 $ cd FoodExplorer_BackEnd
