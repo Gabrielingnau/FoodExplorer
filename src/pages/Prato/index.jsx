@@ -56,16 +56,22 @@ export function Prato() {
  const Value = String(product.value)
  const Total = String(total)
 
- const Value1 = Value.replace(",", ".")
- const Total2 = Total.replace(",", ".")
+ const Value1 = Value.replace("00", "1")
+ const y = Value.replace(",", ".")
+ const Value2 = Value1.replace(",", ".")
+ const Total1 = Total.replace(",", ".")
 
+ const c = Total1 * y
 
- const result = Total2 * Value1
-
+ const result = Total1 * Value2
  const resultString = String(result)
-
- const resultado = resultString.replace(".", ",")
-
+ const resultStrin = String(c)
+ const r = resultString.replace(resultStrin, "")
+ const w = resultString.replace(r, ".00")
+ 
+ const resultado = resultStrin.length < 4 ? w : resultStrin
+ const resultado1 = resultado.replace(".", ",")
+ 
 
   return (
         <Container>
@@ -102,7 +108,7 @@ export function Prato() {
                 <ButtonText onClick={addItem} icon={AiOutlinePlus}/>
               </div>
               <div className="button">
-                <Button icon={PiReceipt} title={`incluir ∙ R$${resultado}`}/>
+                <Button icon={PiReceipt} title={`incluir ∙ R$${resultado1}`}/>
               </div>
             </div>
             </div>

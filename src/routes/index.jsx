@@ -6,13 +6,12 @@ import { AuthRoutes } from "./auth.routes";
 import { AdminRoutes } from "./admin.routes";
 
 export function Routes(){
-
-    const {user} = useAuth()
+  const { user } = useAuth()
 
     return(
         <BrowserRouter>
     
-           {!user ? (<AuthRoutes/>) : user && user.admin === 1 ? (<AdminRoutes/>) : (<AppRoutes/>)}
+          {!user ? (<AuthRoutes/>) : user && user.admin === 1 ? (<AdminRoutes/>) : (<AppRoutes/>)}
                       
         </BrowserRouter>
     )
