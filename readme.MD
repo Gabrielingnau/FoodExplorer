@@ -98,7 +98,7 @@ $ npm install
 # Now start the BackEnd server
 $ npm run dev
 
-# The server will start at port:3333 - go to <http://localhost:3333>
+# The server will start at port:3000 - go to <http://localhost:3000>
 ```
 
 
@@ -118,7 +118,7 @@ $ npm install
 # Run the application in development mode:
 $ npm run dev
 
-# The server will start at port:3333 - go to < http://127.0.0.1:5173/ >
+# The server will start at port:3000 - go to < http://127.0.0.1:5173/ >
 
 # Admin Login
 $ email: admin@gmail.com
@@ -140,7 +140,7 @@ This project was developed with the following technologies:
 ---
 
 ## Deploy the project.
-foodexpl0rer.netlify.app
+https://listmovies333.netlify.app/
 
 ___
 
