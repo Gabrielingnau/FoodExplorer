@@ -125,6 +125,8 @@ fetcProducts()
           
           await api.patch(`products/${params.id}`, fileUploadForm);
         }
+
+        Avatar()
       }else{
         const fileUploadForm = new FormData();
         fileUploadForm.append("avatar", avatarFile);
