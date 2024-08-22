@@ -1,25 +1,25 @@
 
 <p align="center">
-  <h4 align="center"><a href="https://foodexpl0rer.netlify.app">foodexpl0rer.netlify.app</a></h4>
+  <h4 align="center"><a href="https://foodexpl0rer.netlify.app">FoodExplorer</a></h4>
 </p>
 
 <p align="center">
   <img width="800" src="./src/assets/responsivo.png">
 </p>
 
-## 💻 About:
+## 💻 Sobre:
 
-The application developed is a digital menu for a restaurant known as foodExplorer, where it is necessary to authenticate to enter the application through the login screen.
+O aplicativo desenvolvido é um cardápio digital para um restaurante conhecido como foodExplorer, onde é necessário se autenticar para entrar no aplicativo através da tela de login.
 
-Food Explorer has two personas: the administrator and the user;
+O Food Explorer tem duas personas: o administrador e o usuário;
 
-The admin is the person in charge of the restaurant, so they can create, view, and delete a dish at any time. 
+O administrador é a pessoa responsável pelo restaurante, para que possa criar, visualizar e excluir um prato a qualquer momento. 
 
-The user sees all the registered dishes and, when they click on a dish, they are redirected to a new screen with more detailed information about it.
+O usuário vê todos os pratos cadastrados e, ao clicar em um prato, é redirecionado para uma nova tela com informações mais detalhadas sobre ele.
 
-Both the admin and the user can search for dishes by name.
+Tanto o administrador quanto o usuário podem pesquisar pratos por nome.
 
-In this application, the following topics were addressed:
+Nesta aplicação, foram abordados os seguintes tópicos:
 
 - [ReactJs](https://reactjs.org)
 - [Node.js](https://nodejs.org/en/)
@@ -41,22 +41,22 @@ In this application, the following topics were addressed:
 
 ## Features
 
-- [x] A structured project, with a good organization of folders, division of components on the front-end, etc.
-- [x] A README.md file with the specifications on how to run the project in a dev environment.
-- [x] Users will need to authenticate to enter the application through the login screen.
-- [x] The admin will upload images to register the dishes.
-- [x] Meaningful names for functions and variables: Working a bit with Clean Code concepts.
-- [x] The admin, restaurant, and user data will be stored in a database.
-- [x] Possibility to search for the name of the dish.
-- [x] Its interface consumes my own API.
-- [x] The app is responsive: using the concept of Mobile First.
-- [x] Meets the model proposed in Figma and contains elements indicative of action and state.
+- [x] Um projeto estruturado, com uma boa organização de pastas, divisão de componentes no front-end, etc.
+- [x] Um arquivo README.md com as especificações sobre como executar o projeto em um ambiente de desenvolvimento.
+- [x] Os usuários precisarão se autenticar para entrar no aplicativo por meio da tela de login.
+- [x] O administrador fará o upload de imagens para registrar os pratos.
+- [x] Nomes significativos para funções e variáveis: Trabalhando um pouco com conceitos de Código Limpo.
+- [x] Os dados do administrador, do restaurante e do usuário serão armazenados em um banco de dados.
+- [x] Possibilidade de pesquisar o nome do prato.
+- [x] Sua interface consome minha própria API.
+- [x] O aplicativo é responsivo: usando o conceito de Mobile First.
+- [x] Atende ao modelo proposto no Figma e contém elementos indicativos de ação e estado.
 
 ---
 
 ## 🎨 Layout
 
-The layout of the application is available in Figma:
+O layout do site está disponível no Figma:
 
 <a href="https://www.figma.com/file/GkqG5AUJe3ppcUEHfvOX6z/food-explorer?node-id=0%3A1">
   <img alt="Made by tgmarinho" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
@@ -64,61 +64,61 @@ The layout of the application is available in Figma:
 
 
 
-## 🚀 How to run the project.
+## 🚀 Como executar o projeto.
 
-This project is divided into two parts:
-1. Backend (API) 
-2. Frontend 
+Este projeto está dividido em duas partes:
+1. Back-end (API) 
+2. Front-end 
 
-💡The Backend must be running on your machine in order for the frontend to be re-addressed.
+💡O back-end deve estar em execução em sua máquina para que o front-end seja reendereçado.
 
-### Prerequisites
+### Pré requisitos
 
-Before you begin, you will need to have the following tools installed on your machine:
+Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
 [Node.js] (https://nodejs.org/en/). 
-Also, it's good to have an editor to work with the code, such as [VSCode](https://code.visualstudio.com/)
+Além disso, é bom ter um editor para trabalhar com o código, como [VSCode](https://code.visualstudio.com/)
 
 
-### 🚧 Running the BackEnd (server)
+### 🚧 Executando o BackEnd (servidor)
 
 ```bash
-# Download from the repository
-$https://github.com/mewerton/FoodExplorer_BackEnd
+# Baixe do repositório
+$ https://github.com/Gabrielingnau/FoodBackEnd
 
-# Open your VS CODE and then open the Backend folder to open the project
+# Abra seu VS CODE e, em seguida, abra a pasta Backend para abrir o projeto
 $ cd FoodExplorer_BackEnd
 
-# In the BackEnd insert a port and a secret in the empty .env file
+# No BackEnd, insira uma PORT e uma SECRET no arquivo .env vazio
   AUTH_SECRET=
-  PORT=
+  PORTA=
 
-# Install the necessary dependencies
+# Instale as dependências necessárias
 $ npm install
 
-# Now start the BackEnd server
+# Agora inicie o servidor BackEnd
 $ npm run dev
 
-# The server will start at port:3333 - go to <http://localhost:3333>
+# O servidor iniciará na port: 3333 - vá para <http://localhost:3333>
 ```
 
 
-### 💻 Running the FrontEnd
+### 💻 Executando o FrontEnd
 
 ```bash
 
-# Download from the repository
-$https://github.com/mewerton/FoodExplorer_FrontEnd
+# Baixe o repositório
+$ https://github.com/mewerton/FoodExplorer_FrontEnd
 
-# Open your VS CODE and then open the Frontend folder to open the project
+# Abra seu VS CODE e, em seguida, abra a pasta Frontend para abrir o projeto
 $FoodExplorer_FrontEnd
 
-# Install dependencies with:
-$ npm install
+# Instale dependências com:
+$ npm instal
 
-# Run the application in development mode:
+# Execute o aplicativo no modo de desenvolvimento:
 $ npm run dev
 
-# The server will start at port:3333 - go to < http://127.0.0.1:5173/ >
+# O servidor iniciará na port: 3333 - vá para < http://127.0.0.1:5173/ >
 
 # Admin Login
 $ email: admin@gmail.com
@@ -127,31 +127,32 @@ $ password: 253647
 ```
 ---
 
-## 🛠 Technologies
+## 🛠 Tecnologias
 
-This project was developed with the following technologies:
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML
-- CSS
+-CSS
 - JavaScript
 - Node.js
 - React.js
 
 ---
 
-## Deploy the project.
+## Implante o projeto.
 foodexpl0rer.netlify.app
 
 ___
 
-This BackEnd was hosted directly in Render.
-The Frontend, on the other hand, was hosted directly on Netlify.
+Esse back-end foi hospedado diretamente no Render.
+O Frontend, por outro lado, foi hospedado diretamente no Netlify.
 
 ___
-Note: Because it is hosted on a free service, the BackEnd "hibernates" after 15 minutes of non-use.
+Nota: Por estar hospedado em um serviço gratuito, o BackEnd "hiberna" após 15 minutos sem uso.
 <br>
-If you're trying to access the site and the BackEnd is unresponsive, just wait as it will be "initializing" the services.
+Se você estiver tentando acessar o site e o BackEnd não responder, aguarde pois ele estará "inicializando" os serviços.
 <br>
-This step may take up to 1 minute, depending on the load on the Render servers.
+Essa etapa pode levar até 1 minuto, dependendo da carga nos servidores de renderização.
 
 ---
+⌨️ com ❤️ por [Gabriel Lingnau](https://www.linkedin.com/in/gabriel-lingnau-3bb17b266/) 😊
