@@ -82,7 +82,7 @@ Além disso, é bom ter um editor para trabalhar com o código, como [VSCode](ht
 ### 🚧 Executando o BackEnd (servidor)
 
 ```bash
-# Baixe do repositório
+# Baixe o repositório
 $ https://github.com/Gabrielingnau/FoodBackEnd
 
 # Abra seu VS CODE e, em seguida, abra a pasta Backend para abrir o projeto
@@ -93,7 +93,7 @@ $ cd FoodExplorer_BackEnd
   PORTA=
 
 # Instale as dependências necessárias
-$ npm install
+$ npm i
 
 # Agora inicie o servidor BackEnd
 $ npm run dev
@@ -107,7 +107,7 @@ $ npm run dev
 ```bash
 
 # Baixe o repositório
-$ https://github.com/mewerton/FoodExplorer_FrontEnd
+$ https://github.com/Gabrielingnau/FoodExplorer
 
 # Abra seu VS CODE e, em seguida, abra a pasta Frontend para abrir o projeto
 $FoodExplorer_FrontEnd
@@ -139,7 +139,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 ---
 
-## Implante o projeto.
+## deploy do projeto.
 foodexpl0rer.netlify.app
 
 ___
