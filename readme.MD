@@ -39,7 +39,7 @@ Nesta aplicação, foram abordados os seguintes tópicos:
 - [React Router Dom](https://react-icons.github.io/react-icons/)
 ---
 
-## Features
+## Características
 
 - [x] Um projeto estruturado, com uma boa organização de pastas, divisão de componentes no front-end, etc.
 - [x] Um arquivo README.md com as especificações sobre como executar o projeto em um ambiente de desenvolvimento.
